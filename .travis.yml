@@ -1,0 +1,7 @@
+os: linux
+dist: focal
+services:
+  - mysql
+before_script:
+  - sudo mysql -u root -e "CREATE DATABASE drupal; CREATE USER 'drupal'@'localhost' IDENTIFIED BY 'drupal'; GRANT ALL ON drupal.* TO 'drupal'@'localhost';"
+script: true
