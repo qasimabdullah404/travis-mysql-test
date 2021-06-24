@@ -1,5 +1,5 @@
 os: linux
-dist: focal
+dist: bionic
 arch: arm64-graviton2
 virt: lxd
 group: edge
@@ -11,6 +11,5 @@ services:
 before_script:
   - mysql -V
   - uname -p
-  - mysql -u root -e "SET PASSWORD FOR 'root'@'localhost' = PASSWORD('')"
   - mysql -u travis -e "CREATE DATABASE drupal; CREATE USER 'drupal'@'localhost' IDENTIFIED BY 'drupal'; GRANT ALL ON drupal.* TO 'drupal'@'localhost';"
 script: true
