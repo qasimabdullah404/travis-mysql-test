@@ -10,5 +10,6 @@ services:
   - mysql
 before_script:
   - mysql -V
+  - uname -p
   - mysql -u travis -e "CREATE DATABASE drupal; CREATE USER 'drupal'@'localhost' IDENTIFIED BY 'drupal'; GRANT ALL ON drupal.* TO 'drupal'@'localhost';"
 script: true
