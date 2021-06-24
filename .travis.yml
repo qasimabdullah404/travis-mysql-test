@@ -9,5 +9,7 @@ php:
 services:
   - mysql
 before_script:
+  - sudo sysctl -a | grep aio
+  - sysctl -w fs.aio-max-nr=200000
   - mysql -u root -e "CREATE DATABASE drupal; CREATE USER 'drupal'@'localhost' IDENTIFIED BY 'drupal'; GRANT ALL ON drupal.* TO 'drupal'@'localhost';"
 script: true
