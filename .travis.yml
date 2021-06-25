@@ -11,5 +11,6 @@ services:
 before_script:
   - mysql -V
   - uname -p
+  - mysqladmin -u root password ''
   - sudo mysql -u root -e "CREATE DATABASE drupal; CREATE USER 'drupal'@'localhost' IDENTIFIED BY 'drupal'; GRANT ALL ON drupal.* TO 'drupal'@'localhost';"
 script: true
